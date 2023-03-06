@@ -1,12 +1,14 @@
 import React from 'react';
+import TopHeader from "./topHeader";
+import MidHeader from "./MidHeader";
 
-const Desktop = () => {
+const Index = () => {
     return (
         <>
-        <div>topheader</div>
-            <div>midheader</div>
+            <TopHeader/>
+            <MidHeader/>
         </>
     );
 }
 
-export default Desktop;
+export default Index;
