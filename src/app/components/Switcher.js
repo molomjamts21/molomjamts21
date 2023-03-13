@@ -1,14 +1,16 @@
 import React from 'react';
-import Desktop from '../desktop'
-import Mobile from '../mobile'
+import SwapContainer from "../../SwapContainer";
+import ILoader from '../components/Loader';
+import {loadable} from './Loadable';
+
 
 const Switcher = () => {
-    const isMobile = window.innerWidth < 992;
+    const options = { fallback: <ILoader /> };
+    const Desktop = loadable(() => import('../desktop'), options);
+    const Mobile = loadable(() => import('../mobile'), options);
 
     return (
-        <>
-        {isMobile ? <Mobile/> : <Desktop/>}
-        </>
+        <SwapContainer desktop={Desktop} mobile={Mobile} />
     );
 }
 
